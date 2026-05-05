@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>施工案内 | 藤原工業 | 管工事（埼玉県越谷市）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --steel:#4A6F82;--steel-light:#6B8FA3;--steel-pale:#B8CDD6;
+  --dark:#1A1A1A;--charcoal:#2C2C2C;--iron:#3A3A3A;
+  --gray:#6B6B6B;--light:#F0F2F4;--white:#FFFFFF;--border:#D0D8DC;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden}
+
+/* HEADER */
+#site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,26,26,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.08);height:72px;display:flex;align-items:center}
+.header-inner{max-width:1280px;margin:0 auto;padding:0 24px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.logo-en{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--white);letter-spacing:0.12em}
+.logo-ja{font-size:10px;color:var(--steel-pale);letter-spacing:0.15em;margin-top:2px}
+.logo-bar{width:28px;height:2px;background:var(--steel-light);margin-top:4px}
+nav.pc-nav{display:flex;gap:4px}
+nav.pc-nav a{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:rgba(255,255,255,0.78);text-decoration:none;padding:8px 14px;border-radius:2px;letter-spacing:0.06em;transition:color .2s,background .2s}
+nav.pc-nav a:hover,nav.pc-nav a.active{color:var(--white);background:rgba(107,143,163,0.2)}
+.header-cta{display:flex;align-items:center;gap:12px}
+.header-tel{font-family:'Oswald',sans-serif;font-size:17px;color:var(--white);text-decoration:none;letter-spacing:0.05em}
+.header-tel span{font-size:10px;font-family:'Noto Sans JP',sans-serif;display:block;color:var(--steel-pale);letter-spacing:0.1em}
+.btn-primary{background:var(--steel);color:var(--white);font-size:12px;padding:10px 18px;border-radius:2px;text-decoration:none;letter-spacing:0.08em;transition:background .2s;white-space:nowrap}
+.btn-primary:hover{background:var(--steel-light)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(26,26,26,0.98);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:20px;color:var(--white);text-decoration:none;letter-spacing:0.12em}
+
+/* PAGE HERO */
+.page-hero{margin-top:72px;background:linear-gradient(135deg,var(--charcoal) 0%,#1e3040 100%);padding:80px 24px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(107,143,163,0.15) 1px,transparent 1px);background-size:32px 32px}
+.page-hero-inner{max-width:1160px;margin:0 auto;position:relative}
+.page-hero-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.3em;color:var(--steel-pale);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.page-hero-label::before{content:'';display:block;width:24px;height:1px;background:var(--steel-light)}
+.page-hero h1{font-family:'Noto Serif JP',sans-serif;font-size:clamp(28px,4vw,48px);color:var(--white);font-weight:700;margin-bottom:12px}
+.page-hero-sub{font-size:15px;color:rgba(255,255,255,0.6)}
+.breadcrumb{margin-top:24px;display:flex;gap:8px;align-items:center}
+.breadcrumb a,.breadcrumb span{font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.05em}
+.breadcrumb a:hover{color:var(--white)}
+.breadcrumb .sep{color:rgba(255,255,255,0.2)}
+
+/* SERVICE SECTIONS */
+.service-section{padding:96px 24px}
+.service-inner{max-width:1160px;margin:0 auto}
+.service-row{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.service-row.reverse{direction:rtl}
+.service-row.reverse>*{direction:ltr}
+.service-img-wrap{position:relative}
+.service-img{width:100%;height:400px;object-fit:cover;border-radius:3px;display:block;filter:grayscale(10%)}
+.service-img-label{
+  position:absolute;top:20px;left:-12px;
+  background:var(--steel);color:var(--white);
+  font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.2em;
+  padding:8px 16px;
+}
+.service-text-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.25em;color:var(--steel);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.service-text-label::before{content:'';display:block;width:20px;height:1px;background:var(--steel)}
+.service-title{font-family:'Noto Serif JP',sans-serif;font-size:clamp(22px,2.5vw,32px);font-weight:700;margin-bottom:20px;line-height:1.4}
+.service-desc{font-size:14px;color:var(--gray);line-height:1.9;margin-bottom:24px}
+.service-features{list-style:none;margin-bottom:24px}
+.service-features li{font-size:13px;color:var(--iron);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.service-features li::before{content:'';display:block;width:6px;height:6px;border-radius:50%;background:var(--steel);flex-shrink:0}
+.service-price{background:var(--light);border-left:3px solid var(--steel);padding:14px 18px;font-size:13px;color:var(--gray)}
+.service-price strong{color:var(--dark);font-size:15px}
+
+.dark-section{background:var(--light)}
+
+/* CTA BAND */
+.cta-band{background:var(--steel);padding:56px 24px;text-align:center}
+.cta-band-title{font-family:'Noto Serif JP',sans-serif;font-size:clamp(20px,2.5vw,28px);color:var(--white);font-weight:700;margin-bottom:8px}
+.cta-band-sub{font-size:14px;color:rgba(255,255,255,0.75);margin-bottom:24px}
+.cta-band-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.btn-white{background:var(--white);color:var(--steel);padding:14px 36px;text-decoration:none;font-size:14px;letter-spacing:0.1em;border-radius:2px;font-weight:600;transition:.2s}
+.btn-white:hover{background:var(--light)}
+.btn-outline-w{border:2px solid var(--white);color:var(--white);padding:14px 36px;text-decoration:none;font-size:14px;letter-spacing:0.1em;border-radius:2px;transition:.2s}
+.btn-outline-w:hover{background:rgba(255,255,255,0.1)}
+
+/* FOOTER */
+footer{background:var(--dark);padding:64px 24px 32px}
+.footer-inner{max-width:1160px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.8;margin-top:16px}
+.footer-address{font-size:12px;color:rgba(255,255,255,0.4);margin-top:12px;line-height:1.8}
+.footer-col-title{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.2em;color:var(--steel-pale);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:8px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.05em}
+
+/* FADE-UP */
+.fade-up{opacity:0;transform:translateY(32px);transition:opacity .7s,transform .7s}
+.fade-up.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav.pc-nav{display:none}
+  .header-cta .btn-primary{display:none}
+  .header-tel{display:none}
+  .hamburger{display:flex}
+  .service-row{grid-template-columns:1fr;gap:36px}
+  .service-row.reverse{direction:ltr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .service-section{padding:64px 16px}
+  .service-img{height:260px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-en">FUJIWARA KOGYO</span>
+      <span class="logo-ja">藤原工業 | 管工事</span>
+      <span class="logo-bar"></span>
+    </a>
+    <nav class="pc-nav">
+      <a href="index.html">TOP</a>
+      <a href="service.html" class="active">施工案内</a>
+      <a href="works.html">施工実績</a>
+      <a href="company.html">会社概要</a>
+      <a href="recruit.html">採用情報</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:0489897526" class="header-tel">
+        <span>お気軽にご相談ください</span>
+        048-989-7526
+      </a>
+      <a href="contact.html" class="btn-primary">無料相談</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html" onclick="closeMenu()">TOP</a>
+  <a href="service.html" onclick="closeMenu()">施工案内</a>
+  <a href="works.html" onclick="closeMenu()">施工実績</a>
+  <a href="company.html" onclick="closeMenu()">会社概要</a>
+  <a href="recruit.html" onclick="closeMenu()">採用情報</a>
+  <a href="contact.html" onclick="closeMenu()">お問い合わせ</a>
+  <a href="tel:0489897526" style="color:var(--steel-light);font-size:24px;">048-989-7526</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">SERVICES</div>
+    <h1>施工案内</h1>
+    <p class="page-hero-sub">給排水から空調・ガス管まで、管工事全般に対応します</p>
+    <nav class="breadcrumb">
+      <a href="index.html">TOP</a>
+      <span class="sep">›</span>
+      <span>施工案内</span>
+    </nav>
+  </div>
+</section>
+
+<!-- SERVICE 01 -->
+<section class="service-section">
+  <div class="service-inner">
+    <div class="service-row fade-up">
+      <div class="service-img-wrap">
+        <img class="service-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="給排水設備工事">
+        <div class="service-img-label">SERVICE 01</div>
+      </div>
+      <div class="service-text">
+        <div class="service-text-label">SERVICE 01</div>
+        <h2 class="service-title">給排水・給湯設備工事</h2>
+        <p class="service-desc">住宅・マンション・商業施設における給水管・排水管・給湯管の新設および改修工事を承ります。老朽化した配管の全面更新から、漏水修理・部分補修まで幅広く対応。水廻りのあらゆるトラブルに迅速に対応します。</p>
+        <ul class="service-features">
+          <li>新築・増改築に伴う給排水管新設工事</li>
+          <li>老朽化配管の更新・ライニング工事</li>
+          <li>漏水調査・修繕工事</li>
+          <li>給湯器・ボイラー設備の設置・交換</li>
+          <li>マンション・集合住宅の一括改修</li>
+        </ul>
+        <div class="service-price">
+          <strong>対応規模：</strong> 戸建住宅〜大型マンション・商業施設まで
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 02 -->
+<section class="service-section dark-section">
+  <div class="service-inner">
+    <div class="service-row reverse fade-up">
+      <div class="service-img-wrap">
+        <img class="service-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="空調設備工事">
+        <div class="service-img-label">SERVICE 02</div>
+      </div>
+      <div class="service-text">
+        <div class="service-text-label">SERVICE 02</div>
+        <h2 class="service-title">空調・冷暖房設備工事</h2>
+        <p class="service-desc">オフィス・商業施設・工場などの空調システムの設計・施工・メンテナンスを行います。エアコン・冷凍冷蔵設備・空調ダクトの設置から、既存設備の改修・更新まで対応。快適な室内環境の実現をサポートします。</p>
+        <ul class="service-features">
+          <li>業務用エアコン・パッケージエアコンの設置</li>
+          <li>冷凍冷蔵設備の新設・改修工事</li>
+          <li>空調ダクトの設計・製作・施工</li>
+          <li>換気設備・排気設備の設置工事</li>
+          <li>既存空調設備の省エネ改修</li>
+        </ul>
+        <div class="service-price">
+          <strong>対応施設：</strong> オフィス・店舗・工場・医療施設・学校など
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 03 -->
+<section class="service-section">
+  <div class="service-inner">
+    <div class="service-row fade-up">
+      <div class="service-img-wrap">
+        <img class="service-img" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="ガス管配管工事">
+        <div class="service-img-label">SERVICE 03</div>
+      </div>
+      <div class="service-text">
+        <div class="service-text-label">SERVICE 03</div>
+        <h2 class="service-title">ガス管配管工事</h2>
+        <p class="service-desc">都市ガス・プロパンガスの配管工事を、安全基準に基づいた確実な施工で対応します。新設工事から既存設備の改修・ガス漏れ修繕まで、国家資格を持つ技術者が安全第一で施工します。</p>
+        <ul class="service-features">
+          <li>都市ガス・プロパンガス配管の新設工事</li>
+          <li>ガス管の更新・改修工事</li>
+          <li>ガス漏れ検査・修繕工事</li>
+          <li>工場・商業施設のガス設備工事</li>
+          <li>燃料配管・各種工業配管工事</li>
+        </ul>
+        <div class="service-price">
+          <strong>有資格者：</strong> ガス工事資格保有技術者が担当します
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 04 -->
+<section class="service-section dark-section">
+  <div class="service-inner">
+    <div class="service-row reverse fade-up">
+      <div class="service-img-wrap">
+        <img class="service-img" src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=800&q=80" alt="衛生設備・浄化槽工事">
+        <div class="service-img-label">SERVICE 04</div>
+      </div>
+      <div class="service-text">
+        <div class="service-text-label">SERVICE 04</div>
+        <h2 class="service-title">衛生設備・浄化槽工事</h2>
+        <p class="service-desc">トイレ・洗面台・浴室などの衛生設備の設置・改修工事、および浄化槽の設置・維持管理を行います。快適で清潔な衛生環境の整備で、住宅・施設の生活品質を向上させます。</p>
+        <ul class="service-features">
+          <li>トイレ・洗面・浴室の新設・改修工事</li>
+          <li>浄化槽の新設・改修・維持管理</li>
+          <li>水洗便所設備・トイレ工事</li>
+          <li>厨房設備の給排水工事</li>
+          <li>公共施設・商業施設の衛生設備工事</li>
+        </ul>
+        <div class="service-price">
+          <strong>対応エリア：</strong> 埼玉県全域・東京都・茨城県・栃木県周辺
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-title">無料現地調査・お見積もりはこちら</div>
+  <p class="cta-band-sub">まずはお気軽にご相談ください。現地確認のうえ、丁寧にご提案します。</p>
+  <div class="cta-band-btns">
+    <a href="contact.html" class="btn-white">メールで相談する</a>
+    <a href="tel:0489897526" class="btn-outline-w">📞 048-989-7526</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">
+          <span class="logo-en">FUJIWARA KOGYO</span>
+          <span class="logo-ja">藤原工業 | 管工事</span>
+          <span class="logo-bar"></span>
+        </a>
+        <p class="footer-desc">給排水・空調・ガス管配管まで、あらゆる管工事に対応する埼玉県越谷市の専門会社です。</p>
+        <address class="footer-address">
+          〒343-0844 埼玉県越谷市大間野町４－２０６－９<br>
+          TEL: 048-989-7526 ／ 代表者: 藤原 剛
+        </address>
+      </div>
+      <div>
+        <div class="footer-col-title">SERVICES</div>
+        <ul class="footer-links">
+          <li><a href="service.html">給排水・給湯設備工事</a></li>
+          <li><a href="service.html">空調・冷暖房設備工事</a></li>
+          <li><a href="service.html">ガス管配管工事</a></li>
+          <li><a href="service.html">衛生設備・浄化槽工事</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">PAGES</div>
+        <ul class="footer-links">
+          <li><a href="index.html">TOP</a></li>
+          <li><a href="service.html">施工案内</a></li>
+          <li><a href="works.html">施工実績</a></li>
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 藤原工業. All Rights Reserved.</p>
+      <p class="footer-copy">埼玉県越谷市大間野町４－２０６－９</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const ham = document.getElementById('hamburger');
+const mNav = document.getElementById('mobileNav');
+ham.addEventListener('click',()=>{
+  ham.classList.toggle('open');
+  mNav.classList.toggle('open');
+  document.body.style.overflow = mNav.classList.contains('open')?'hidden':'';
+});
+function closeMenu(){
+  ham.classList.remove('open');
+  mNav.classList.remove('open');
+  document.body.style.overflow='';
+}
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

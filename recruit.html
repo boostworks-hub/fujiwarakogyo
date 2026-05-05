@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用情報 | 藤原工業 | 管工事（埼玉県越谷市）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --steel:#4A6F82;--steel-light:#6B8FA3;--steel-pale:#B8CDD6;
+  --dark:#1A1A1A;--charcoal:#2C2C2C;--iron:#3A3A3A;
+  --gray:#6B6B6B;--light:#F0F2F4;--white:#FFFFFF;--border:#D0D8DC;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden}
+
+/* HEADER */
+#site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,26,26,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.08);height:72px;display:flex;align-items:center}
+.header-inner{max-width:1280px;margin:0 auto;padding:0 24px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.logo-en{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--white);letter-spacing:0.12em}
+.logo-ja{font-size:10px;color:var(--steel-pale);letter-spacing:0.15em;margin-top:2px}
+.logo-bar{width:28px;height:2px;background:var(--steel-light);margin-top:4px}
+nav.pc-nav{display:flex;gap:4px}
+nav.pc-nav a{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:rgba(255,255,255,0.78);text-decoration:none;padding:8px 14px;border-radius:2px;letter-spacing:0.06em;transition:color .2s,background .2s}
+nav.pc-nav a:hover,nav.pc-nav a.active{color:var(--white);background:rgba(107,143,163,0.2)}
+.header-cta{display:flex;align-items:center;gap:12px}
+.header-tel{font-family:'Oswald',sans-serif;font-size:17px;color:var(--white);text-decoration:none;letter-spacing:0.05em}
+.header-tel span{font-size:10px;font-family:'Noto Sans JP',sans-serif;display:block;color:var(--steel-pale);letter-spacing:0.1em}
+.btn-primary{background:var(--steel);color:var(--white);font-size:12px;padding:10px 18px;border-radius:2px;text-decoration:none;letter-spacing:0.08em;transition:background .2s;white-space:nowrap}
+.btn-primary:hover{background:var(--steel-light)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(26,26,26,0.98);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:20px;color:var(--white);text-decoration:none;letter-spacing:0.12em}
+
+/* PAGE HERO */
+.page-hero{margin-top:72px;background:linear-gradient(135deg,var(--charcoal) 0%,#1e3040 100%);padding:80px 24px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(107,143,163,0.15) 1px,transparent 1px);background-size:32px 32px}
+.page-hero-inner{max-width:1160px;margin:0 auto;position:relative}
+.page-hero-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.3em;color:var(--steel-pale);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.page-hero-label::before{content:'';display:block;width:24px;height:1px;background:var(--steel-light)}
+.page-hero h1{font-family:'Noto Serif JP',sans-serif;font-size:clamp(28px,4vw,48px);color:var(--white);font-weight:700;margin-bottom:12px}
+.page-hero-sub{font-size:15px;color:rgba(255,255,255,0.6)}
+.breadcrumb{margin-top:24px;display:flex;gap:8px;align-items:center}
+.breadcrumb a,.breadcrumb span{font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.05em}
+.breadcrumb a:hover{color:var(--white)}
+.breadcrumb .sep{color:rgba(255,255,255,0.2)}
+
+/* SECTION */
+.section{padding:96px 24px}
+.section-inner{max-width:1160px;margin:0 auto}
+.section-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.25em;color:var(--steel);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::before{content:'';display:block;width:24px;height:1px;background:var(--steel)}
+.section-title{font-family:'Noto Serif JP',sans-serif;font-size:clamp(24px,3vw,36px);color:var(--dark);font-weight:700;margin-bottom:48px;line-height:1.4}
+.section-title .en{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:0.2em;color:var(--gray);display:block;margin-top:6px;font-weight:400}
+
+/* APPEAL CARDS */
+.appeal-bg{background:var(--charcoal)}
+.appeal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.appeal-card{background:var(--iron);padding:36px 24px;border-top:3px solid var(--steel)}
+.appeal-icon{font-size:36px;margin-bottom:16px}
+.appeal-title{font-family:'Noto Serif JP',sans-serif;font-size:17px;font-weight:600;color:var(--white);margin-bottom:10px}
+.appeal-desc{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8}
+
+/* VOICE SECTION */
+.voice-bg{background:var(--light);position:relative}
+.voice-bg::before{content:'';position:absolute;inset:0;background-image:radial-gradient(var(--border) 1px,transparent 1px);background-size:28px 28px;opacity:0.5}
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+.voice-card{background:var(--white);padding:32px 24px;border-radius:3px;box-shadow:0 2px 12px rgba(0,0,0,0.06);position:relative}
+.voice-card::before{content:'"';font-family:'Oswald',sans-serif;font-size:80px;color:var(--steel-pale);position:absolute;top:-10px;left:16px;line-height:1;opacity:0.5}
+.voice-text{font-size:14px;color:var(--iron);line-height:1.85;margin-bottom:20px;padding-top:36px}
+.voice-author{display:flex;align-items:center;gap:12px}
+.voice-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--steel) 0%,var(--charcoal) 100%);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.voice-name{font-family:'Noto Serif JP',sans-serif;font-size:14px;font-weight:600}
+.voice-role{font-size:11px;color:var(--gray);margin-top:2px}
+
+/* JOB TABLE */
+.job-table{width:100%;border-collapse:collapse}
+.job-table tr{border-bottom:1px solid var(--border)}
+.job-table th{width:200px;padding:20px 16px;font-size:13px;font-weight:500;color:var(--gray);background:var(--light);vertical-align:top;border-right:2px solid var(--steel);letter-spacing:0.05em}
+.job-table td{padding:20px 24px;font-size:14px;color:var(--dark);line-height:1.8;vertical-align:top}
+.job-badge{display:inline-block;background:var(--steel);color:var(--white);font-size:11px;padding:2px 8px;border-radius:2px;margin-right:4px;margin-bottom:4px}
+
+/* APPLY FLOW */
+.flow-bg{background:var(--light);position:relative}
+.flow-bg::before{content:'';position:absolute;inset:0;background-image:radial-gradient(var(--border) 1px,transparent 1px);background-size:28px 28px;opacity:0.5}
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.flow-grid::before{content:'';position:absolute;top:40px;left:calc(12.5%);right:calc(12.5%);height:2px;background:linear-gradient(90deg,var(--steel-light),var(--steel));z-index:0}
+.flow-step{position:relative;z-index:1;padding:0 16px;text-align:center}
+.flow-num{width:80px;height:80px;border-radius:50%;background:var(--steel);color:var(--white);font-family:'Oswald',sans-serif;font-size:24px;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;border:4px solid var(--white);box-shadow:0 4px 16px rgba(74,111,130,0.3)}
+.flow-title{font-family:'Noto Serif JP',sans-serif;font-size:15px;font-weight:600;margin-bottom:8px}
+.flow-desc{font-size:13px;color:var(--gray);line-height:1.7}
+
+/* CTA APPLY */
+.cta-apply{background:var(--steel);padding:80px 24px;text-align:center}
+.cta-apply-title{font-family:'Noto Serif JP',sans-serif;font-size:clamp(22px,3vw,34px);color:var(--white);font-weight:700;margin-bottom:12px}
+.cta-apply-sub{font-size:14px;color:rgba(255,255,255,0.75);margin-bottom:32px;line-height:1.8}
+.btn-apply{display:inline-block;background:var(--white);color:var(--steel);padding:18px 56px;font-size:16px;font-weight:700;letter-spacing:0.1em;border-radius:2px;text-decoration:none;transition:.2s}
+.btn-apply:hover{background:var(--light)}
+
+/* FOOTER */
+footer{background:var(--dark);padding:64px 24px 32px}
+.footer-inner{max-width:1160px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.8;margin-top:16px}
+.footer-address{font-size:12px;color:rgba(255,255,255,0.4);margin-top:12px;line-height:1.8}
+.footer-col-title{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.2em;color:var(--steel-pale);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:8px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.05em}
+
+/* FADE-UP */
+.fade-up{opacity:0;transform:translateY(32px);transition:opacity .7s,transform .7s}
+.fade-up.visible{opacity:1;transform:none}
+.fade-up:nth-child(2){transition-delay:.1s}
+.fade-up:nth-child(3){transition-delay:.2s}
+.fade-up:nth-child(4){transition-delay:.3s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav.pc-nav{display:none}
+  .header-cta .btn-primary,.header-tel{display:none}
+  .hamburger{display:flex}
+  .appeal-grid{grid-template-columns:1fr 1fr}
+  .voice-grid{grid-template-columns:1fr}
+  .flow-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .flow-grid::before{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .job-table th{width:130px}
+}
+@media(max-width:600px){
+  .section{padding:64px 16px}
+  .appeal-grid{grid-template-columns:1fr}
+  .flow-grid{grid-template-columns:1fr}
+  .job-table th,.job-table td{padding:14px 12px;font-size:13px}
+  .job-table th{width:100px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-en">FUJIWARA KOGYO</span>
+      <span class="logo-ja">藤原工業 | 管工事</span>
+      <span class="logo-bar"></span>
+    </a>
+    <nav class="pc-nav">
+      <a href="index.html">TOP</a>
+      <a href="service.html">施工案内</a>
+      <a href="works.html">施工実績</a>
+      <a href="company.html">会社概要</a>
+      <a href="recruit.html" class="active">採用情報</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:0489897526" class="header-tel">
+        <span>お気軽にご相談ください</span>
+        048-989-7526
+      </a>
+      <a href="contact.html" class="btn-primary">無料相談</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html" onclick="closeMenu()">TOP</a>
+  <a href="service.html" onclick="closeMenu()">施工案内</a>
+  <a href="works.html" onclick="closeMenu()">施工実績</a>
+  <a href="company.html" onclick="closeMenu()">会社概要</a>
+  <a href="recruit.html" onclick="closeMenu()">採用情報</a>
+  <a href="contact.html" onclick="closeMenu()">お問い合わせ</a>
+  <a href="tel:0489897526" style="color:var(--steel-light);font-size:24px;">048-989-7526</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">RECRUIT</div>
+    <h1>採用情報</h1>
+    <p class="page-hero-sub">あなたの技術と情熱を、地域の現場で活かしてください</p>
+    <nav class="breadcrumb">
+      <a href="index.html">TOP</a>
+      <span class="sep">›</span>
+      <span>採用情報</span>
+    </nav>
+  </div>
+</section>
+
+<!-- APPEAL -->
+<section class="section appeal-bg">
+  <div class="section-inner">
+    <div class="section-label" style="color:var(--steel-pale)"><span style="background:var(--steel-pale);display:block;width:24px;height:1px;margin-right:10px"></span>WHY JOIN US</div>
+    <h2 class="section-title" style="color:var(--white);margin-bottom:36px">藤原工業で働く魅力<span class="en" style="color:rgba(255,255,255,0.3)">APPEAL</span></h2>
+    <div class="appeal-grid">
+      <div class="appeal-card fade-up">
+        <div class="appeal-icon">🔧</div>
+        <div class="appeal-title">確かな技術が身につく</div>
+        <p class="appeal-desc">給排水・空調・ガス管配管と幅広い管工事を経験でき、国家資格の取得もサポート。現場ごとに新しい課題があり、着実にスキルアップできます。</p>
+      </div>
+      <div class="appeal-card fade-up">
+        <div class="appeal-icon">💰</div>
+        <div class="appeal-title">経験・技術に応じた待遇</div>
+        <p class="appeal-desc">経験・資格・実績をしっかり評価します。資格取得支援制度もあり、スキルを磨きながら収入アップを目指せる環境です。</p>
+      </div>
+      <div class="appeal-card fade-up">
+        <div class="appeal-icon">🏠</div>
+        <div class="appeal-title">地元・埼玉で長く働ける</div>
+        <p class="appeal-desc">越谷市を中心とした地域密着の仕事です。通勤しやすく、家族との時間も大切にしながら安定して長く働ける環境を整えています。</p>
+      </div>
+      <div class="appeal-card fade-up">
+        <div class="appeal-icon">👥</div>
+        <div class="appeal-title">アットホームな職場環境</div>
+        <p class="appeal-desc">少数精鋭のチームで、社長・先輩職人との距離が近く、困ったことはすぐ相談できます。未経験でも丁寧に指導しますので安心してください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="section voice-bg">
+  <div class="section-inner" style="position:relative">
+    <div class="section-label">STAFF VOICE</div>
+    <h2 class="section-title">スタッフの声<span class="en">VOICE</span></h2>
+    <div class="voice-grid">
+      <div class="voice-card fade-up">
+        <p class="voice-text">最初は未経験での入社でしたが、先輩が丁寧に教えてくれて、2年目には一人で現場を任せてもらえるようになりました。資格も会社のサポートで取得でき、自分の成長が実感できます。</p>
+        <div class="voice-author">
+          <div class="voice-avatar">👷</div>
+          <div>
+            <div class="voice-name">田中 K（仮名）</div>
+            <div class="voice-role">給排水設備担当 ／ 入社4年目</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card fade-up">
+        <p class="voice-text">越谷のお客様から「ありがとう」と言っていただける瞬間がやりがいです。目に見えない配管の仕事ですが、完工後にお客様が喜んでくださると本当に嬉しい。地元で働けているのも自慢です。</p>
+        <div class="voice-author">
+          <div class="voice-avatar">👷</div>
+          <div>
+            <div class="voice-name">佐藤 R（仮名）</div>
+            <div class="voice-role">空調設備担当 ／ 入社6年目</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card fade-up">
+        <p class="voice-text">ガス管配管の専門資格を取得できたことが一番の収穫です。社長が「挑戦する気持ちを大事に」という方針で、やりたいことを応援してくれる職場。毎日の仕事に充実感があります。</p>
+        <div class="voice-author">
+          <div class="voice-avatar">👷</div>
+          <div>
+            <div class="voice-name">山田 T（仮名）</div>
+            <div class="voice-role">ガス管配管担当 ／ 入社3年目</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOB DETAIL -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">JOB DETAIL</div>
+    <h2 class="section-title">求人詳細<span class="en">JOB INFORMATION</span></h2>
+    <div class="fade-up">
+      <table class="job-table">
+        <tr>
+          <th>職種</th>
+          <td>
+            <span class="job-badge">管工事施工スタッフ</span>
+            <span class="job-badge">設備施工管理</span><br>
+            ※経験者・未経験者ともに歓迎
+          </td>
+        </tr>
+        <tr>
+          <th>給与</th>
+          <td>
+            日給 15,000円〜25,000円（経験・資格により優遇）<br>
+            月給制への転換相談可能
+          </td>
+        </tr>
+        <tr>
+          <th>勤務時間</th>
+          <td>8:00〜17:00（実働8時間）<br>残業は月平均20時間以内</td>
+        </tr>
+        <tr>
+          <th>勤務地</th>
+          <td>埼玉県越谷市大間野町４－２０６－９（本社）<br>および現場各所（埼玉県内・東京都・茨城県・栃木県）</td>
+        </tr>
+        <tr>
+          <th>休日・休暇</th>
+          <td>日曜日・祝日定休<br>夏季休暇・年末年始休暇あり<br>有給休暇（法定通り）</td>
+        </tr>
+        <tr>
+          <th>待遇・福利厚生</th>
+          <td>
+            社会保険完備（健康・厚生年金・雇用・労災）<br>
+            交通費支給（実費）／制服・工具支給<br>
+            資格取得支援制度あり（受験費用会社負担）<br>
+            賞与年2回（業績による）
+          </td>
+        </tr>
+        <tr>
+          <th>歓迎する資格</th>
+          <td>
+            管工事施工管理技士（1・2級）<br>
+            給水装置工事主任技術者<br>
+            ガス工事関連資格<br>
+            普通自動車免許（必須）
+          </td>
+        </tr>
+        <tr>
+          <th>応募資格</th>
+          <td>年齢・経験不問（未経験者は研修あり）<br>普通自動車免許をお持ちの方</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY FLOW -->
+<section class="section flow-bg">
+  <div class="section-inner" style="position:relative">
+    <div class="section-label">HOW TO APPLY</div>
+    <h2 class="section-title">応募の流れ<span class="en">APPLICATION FLOW</span></h2>
+    <div class="flow-grid">
+      <div class="flow-step fade-up">
+        <div class="flow-num">01</div>
+        <div class="flow-title">お問い合わせ・応募</div>
+        <p class="flow-desc">電話またはお問い合わせフォームにてご連絡ください。まずはお気軽にどうぞ。</p>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-num">02</div>
+        <div class="flow-title">書類選考</div>
+        <p class="flow-desc">履歴書・職務経歴書をご提出いただきます。結果は1週間以内にご連絡します。</p>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-num">03</div>
+        <div class="flow-title">面接・見学</div>
+        <p class="flow-desc">代表または現場担当者との面接を行います。現場見学も歓迎しています。</p>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-num">04</div>
+        <div class="flow-title">内定・入社</div>
+        <p class="flow-desc">採用決定後、入社日・条件等についてご相談します。入社後は丁寧な研修があります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA APPLY -->
+<div class="cta-apply">
+  <div class="cta-apply-title">一緒に埼玉の現場を支えませんか</div>
+  <p class="cta-apply-sub">未経験歓迎・経験者優遇。<br>まずはお気軽にお問い合わせください。</p>
+  <a href="contact.html" class="btn-apply">採用についてお問い合わせする</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">
+          <span class="logo-en">FUJIWARA KOGYO</span>
+          <span class="logo-ja">藤原工業 | 管工事</span>
+          <span class="logo-bar"></span>
+        </a>
+        <p class="footer-desc">給排水・空調・ガス管配管まで、あらゆる管工事に対応する埼玉県越谷市の専門会社です。</p>
+        <address class="footer-address">
+          〒343-0844 埼玉県越谷市大間野町４－２０６－９<br>
+          TEL: 048-989-7526 ／ 代表者: 藤原 剛
+        </address>
+      </div>
+      <div>
+        <div class="footer-col-title">SERVICES</div>
+        <ul class="footer-links">
+          <li><a href="service.html">給排水・給湯設備工事</a></li>
+          <li><a href="service.html">空調・冷暖房設備工事</a></li>
+          <li><a href="service.html">ガス管配管工事</a></li>
+          <li><a href="service.html">衛生設備・浄化槽工事</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">PAGES</div>
+        <ul class="footer-links">
+          <li><a href="index.html">TOP</a></li>
+          <li><a href="service.html">施工案内</a></li>
+          <li><a href="works.html">施工実績</a></li>
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 藤原工業. All Rights Reserved.</p>
+      <p class="footer-copy">埼玉県越谷市大間野町４－２０６－９</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const ham = document.getElementById('hamburger');
+const mNav = document.getElementById('mobileNav');
+ham.addEventListener('click',()=>{
+  ham.classList.toggle('open');
+  mNav.classList.toggle('open');
+  document.body.style.overflow = mNav.classList.contains('open')?'hidden':'';
+});
+function closeMenu(){
+  ham.classList.remove('open');
+  mNav.classList.remove('open');
+  document.body.style.overflow='';
+}
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

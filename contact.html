@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | 藤原工業 | 管工事（埼玉県越谷市）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --steel:#4A6F82;--steel-light:#6B8FA3;--steel-pale:#B8CDD6;
+  --dark:#1A1A1A;--charcoal:#2C2C2C;--iron:#3A3A3A;
+  --gray:#6B6B6B;--light:#F0F2F4;--white:#FFFFFF;--border:#D0D8DC;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);background:var(--white);overflow-x:hidden}
+
+/* HEADER */
+#site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,26,26,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.08);height:72px;display:flex;align-items:center}
+.header-inner{max-width:1280px;margin:0 auto;padding:0 24px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.logo-en{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--white);letter-spacing:0.12em}
+.logo-ja{font-size:10px;color:var(--steel-pale);letter-spacing:0.15em;margin-top:2px}
+.logo-bar{width:28px;height:2px;background:var(--steel-light);margin-top:4px}
+nav.pc-nav{display:flex;gap:4px}
+nav.pc-nav a{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:rgba(255,255,255,0.78);text-decoration:none;padding:8px 14px;border-radius:2px;letter-spacing:0.06em;transition:color .2s,background .2s}
+nav.pc-nav a:hover,nav.pc-nav a.active{color:var(--white);background:rgba(107,143,163,0.2)}
+.header-cta{display:flex;align-items:center;gap:12px}
+.header-tel{font-family:'Oswald',sans-serif;font-size:17px;color:var(--white);text-decoration:none;letter-spacing:0.05em}
+.header-tel span{font-size:10px;font-family:'Noto Sans JP',sans-serif;display:block;color:var(--steel-pale);letter-spacing:0.1em}
+.btn-primary{background:var(--steel);color:var(--white);font-size:12px;padding:10px 18px;border-radius:2px;text-decoration:none;letter-spacing:0.08em;transition:background .2s;white-space:nowrap}
+.btn-primary:hover{background:var(--steel-light)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(26,26,26,0.98);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mobile-nav.open{display:flex}
+.mobile-nav a{font-size:20px;color:var(--white);text-decoration:none;letter-spacing:0.12em}
+
+/* PAGE HERO */
+.page-hero{margin-top:72px;background:linear-gradient(135deg,var(--charcoal) 0%,#1e3040 100%);padding:80px 24px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(107,143,163,0.15) 1px,transparent 1px);background-size:32px 32px}
+.page-hero-inner{max-width:1160px;margin:0 auto;position:relative}
+.page-hero-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.3em;color:var(--steel-pale);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.page-hero-label::before{content:'';display:block;width:24px;height:1px;background:var(--steel-light)}
+.page-hero h1{font-family:'Noto Serif JP',sans-serif;font-size:clamp(28px,4vw,48px);color:var(--white);font-weight:700;margin-bottom:12px}
+.page-hero-sub{font-size:15px;color:rgba(255,255,255,0.6)}
+.breadcrumb{margin-top:24px;display:flex;gap:8px;align-items:center}
+.breadcrumb a,.breadcrumb span{font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;letter-spacing:0.05em}
+.breadcrumb a:hover{color:var(--white)}
+.breadcrumb .sep{color:rgba(255,255,255,0.2)}
+
+/* CONTACT INFO BAND */
+.contact-info-band{background:var(--light);padding:64px 24px;border-bottom:1px solid var(--border)}
+.contact-info-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.contact-info-card{background:var(--white);padding:36px 32px;border-radius:3px;border-top:3px solid var(--steel);box-shadow:0 2px 12px rgba(0,0,0,0.06);text-align:center}
+.contact-info-icon{font-size:40px;margin-bottom:12px}
+.contact-info-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.2em;color:var(--steel);margin-bottom:8px}
+.contact-info-main{font-family:'Oswald',sans-serif;font-size:clamp(22px,3vw,32px);color:var(--dark);font-weight:600;letter-spacing:0.05em;text-decoration:none;display:block;margin-bottom:6px;transition:color .2s}
+.contact-info-main:hover{color:var(--steel)}
+.contact-info-note{font-size:12px;color:var(--gray);line-height:1.6}
+
+/* FORM SECTION */
+.form-section{padding:96px 24px;background:var(--white)}
+.form-section-inner{max-width:760px;margin:0 auto}
+.section-label{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.25em;color:var(--steel);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.section-label::before{content:'';display:block;width:24px;height:1px;background:var(--steel)}
+.section-title{font-family:'Noto Serif JP',sans-serif;font-size:clamp(22px,2.5vw,32px);color:var(--dark);font-weight:700;margin-bottom:12px;line-height:1.4}
+.form-note{font-size:13px;color:var(--gray);margin-bottom:40px;line-height:1.7}
+.form-note span{color:#c0392b}
+
+/* FORM STYLES */
+.contact-form{display:flex;flex-direction:column;gap:24px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-label{font-size:13px;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:8px}
+.form-required{font-size:10px;background:#c0392b;color:var(--white);padding:2px 6px;border-radius:2px;letter-spacing:0.05em}
+.form-optional{font-size:10px;background:var(--gray);color:var(--white);padding:2px 6px;border-radius:2px;letter-spacing:0.05em}
+.form-input,.form-select,.form-textarea{
+  width:100%;padding:12px 16px;
+  border:1px solid var(--border);border-radius:2px;
+  font-family:'Noto Sans JP',sans-serif;font-size:14px;color:var(--dark);
+  background:var(--white);transition:border-color .2s,box-shadow .2s;
+  appearance:none;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  outline:none;border-color:var(--steel);
+  box-shadow:0 0 0 3px rgba(74,111,130,0.1);
+}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6B6B' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.form-textarea{resize:vertical;min-height:160px;line-height:1.7}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-submit-wrap{text-align:center;margin-top:16px}
+.form-privacy{font-size:12px;color:var(--gray);margin-bottom:20px;line-height:1.7;text-align:center}
+.btn-submit{
+  background:var(--steel);color:var(--white);
+  border:none;padding:18px 64px;font-size:15px;letter-spacing:0.12em;
+  font-family:'Noto Sans JP',sans-serif;cursor:pointer;border-radius:2px;
+  transition:background .2s,transform .15s;
+}
+.btn-submit:hover{background:var(--steel-light);transform:translateY(-1px)}
+.btn-submit:active{transform:none}
+
+/* FOOTER */
+footer{background:var(--dark);padding:64px 24px 32px}
+.footer-inner{max-width:1160px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.8;margin-top:16px}
+.footer-address{font-size:12px;color:rgba(255,255,255,0.4);margin-top:12px;line-height:1.8}
+.footer-col-title{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:0.2em;color:var(--steel-pale);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:8px}
+.footer-links a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.05em}
+
+/* FADE-UP */
+.fade-up{opacity:0;transform:translateY(32px);transition:opacity .7s,transform .7s}
+.fade-up.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav.pc-nav{display:none}
+  .header-cta .btn-primary,.header-tel{display:none}
+  .hamburger{display:flex}
+  .contact-info-inner{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .form-section{padding:64px 16px}
+  .contact-info-band{padding:48px 16px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-en">FUJIWARA KOGYO</span>
+      <span class="logo-ja">藤原工業 | 管工事</span>
+      <span class="logo-bar"></span>
+    </a>
+    <nav class="pc-nav">
+      <a href="index.html">TOP</a>
+      <a href="service.html">施工案内</a>
+      <a href="works.html">施工実績</a>
+      <a href="company.html">会社概要</a>
+      <a href="recruit.html">採用情報</a>
+      <a href="contact.html" class="active">お問い合わせ</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:0489897526" class="header-tel">
+        <span>お気軽にご相談ください</span>
+        048-989-7526
+      </a>
+      <a href="contact.html" class="btn-primary">無料相談</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+  <a href="index.html" onclick="closeMenu()">TOP</a>
+  <a href="service.html" onclick="closeMenu()">施工案内</a>
+  <a href="works.html" onclick="closeMenu()">施工実績</a>
+  <a href="company.html" onclick="closeMenu()">会社概要</a>
+  <a href="recruit.html" onclick="closeMenu()">採用情報</a>
+  <a href="contact.html" onclick="closeMenu()">お問い合わせ</a>
+  <a href="tel:0489897526" style="color:var(--steel-light);font-size:24px;">048-989-7526</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">CONTACT</div>
+    <h1>お問い合わせ</h1>
+    <p class="page-hero-sub">管工事のご相談・お見積もりはお気軽にどうぞ</p>
+    <nav class="breadcrumb">
+      <a href="index.html">TOP</a>
+      <span class="sep">›</span>
+      <span>お問い合わせ</span>
+    </nav>
+  </div>
+</section>
+
+<!-- CONTACT INFO -->
+<div class="contact-info-band">
+  <div class="contact-info-inner">
+    <div class="contact-info-card fade-up">
+      <div class="contact-info-icon">📞</div>
+      <div class="contact-info-label">PHONE</div>
+      <a href="tel:0489897526" class="contact-info-main">048-989-7526</a>
+      <p class="contact-info-note">受付時間：8:00〜18:00<br>（日曜・祝日を除く）<br>お急ぎの方はお電話が確実です</p>
+    </div>
+    <div class="contact-info-card fade-up">
+      <div class="contact-info-icon">✉️</div>
+      <div class="contact-info-label">MAIL FORM</div>
+      <span class="contact-info-main" style="cursor:default;font-size:clamp(16px,2vw,22px)">24時間受付</span>
+      <p class="contact-info-note">下記フォームよりお送りください<br>2営業日以内にご返信いたします<br>現地調査・お見積もりは無料です</p>
+    </div>
+  </div>
+</div>
+
+<!-- FORM SECTION -->
+<section class="form-section">
+  <div class="form-section-inner fade-up">
+    <div class="section-label">CONTACT FORM</div>
+    <h2 class="section-title">お問い合わせフォーム</h2>
+    <p class="form-note"><span>※</span>のついた項目は必須です。内容確認後、担当者よりご連絡いたします。</p>
+
+    <form class="contact-form" action="#" method="post">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="name">お名前<span class="form-required">必須</span></label>
+          <input class="form-input" type="text" id="name" name="name" placeholder="例：山田 太郎" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="company">会社名・屋号<span class="form-optional">任意</span></label>
+          <input class="form-input" type="text" id="company" name="company" placeholder="例：株式会社〇〇">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="tel">電話番号<span class="form-required">必須</span></label>
+          <input class="form-input" type="tel" id="tel" name="tel" placeholder="例：048-989-7526" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">メールアドレス<span class="form-required">必須</span></label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="例：info@example.com" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="type">お問い合わせ種別<span class="form-required">必須</span></label>
+        <select class="form-select" id="type" name="type" required>
+          <option value="" disabled selected>お問い合わせの種類を選択してください</option>
+          <option value="水道">給排水・給湯設備工事について</option>
+          <option value="空調">空調・冷暖房設備工事について</option>
+          <option value="ガス">ガス管配管工事について</option>
+          <option value="衛生">衛生設備・浄化槽工事について</option>
+          <option value="見積">お見積もり依頼</option>
+          <option value="採用">採用・求人について</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="address">施工場所（住所）<span class="form-optional">任意</span></label>
+        <input class="form-input" type="text" id="address" name="address" placeholder="例：埼玉県越谷市〇〇町〇〇">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">お問い合わせ内容<span class="form-required">必須</span></label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="お問い合わせの詳細をご記入ください。&#10;例）マンションの給水管が老朽化しているため改修を検討しています。まずは現地調査をお願いしたいです。" required></textarea>
+      </div>
+
+      <div class="form-submit-wrap">
+        <p class="form-privacy">送信いただいた個人情報は、お問い合わせへの対応にのみ使用し、第三者への提供は行いません。</p>
+        <button type="submit" class="btn-submit">送信する →</button>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="logo">
+          <span class="logo-en">FUJIWARA KOGYO</span>
+          <span class="logo-ja">藤原工業 | 管工事</span>
+          <span class="logo-bar"></span>
+        </a>
+        <p class="footer-desc">給排水・空調・ガス管配管まで、あらゆる管工事に対応する埼玉県越谷市の専門会社です。</p>
+        <address class="footer-address">
+          〒343-0844 埼玉県越谷市大間野町４－２０６－９<br>
+          TEL: 048-989-7526 ／ 代表者: 藤原 剛
+        </address>
+      </div>
+      <div>
+        <div class="footer-col-title">SERVICES</div>
+        <ul class="footer-links">
+          <li><a href="service.html">給排水・給湯設備工事</a></li>
+          <li><a href="service.html">空調・冷暖房設備工事</a></li>
+          <li><a href="service.html">ガス管配管工事</a></li>
+          <li><a href="service.html">衛生設備・浄化槽工事</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">PAGES</div>
+        <ul class="footer-links">
+          <li><a href="index.html">TOP</a></li>
+          <li><a href="service.html">施工案内</a></li>
+          <li><a href="works.html">施工実績</a></li>
+          <li><a href="company.html">会社概要</a></li>
+          <li><a href="recruit.html">採用情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 藤原工業. All Rights Reserved.</p>
+      <p class="footer-copy">埼玉県越谷市大間野町４－２０６－９</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const ham = document.getElementById('hamburger');
+const mNav = document.getElementById('mobileNav');
+ham.addEventListener('click',()=>{
+  ham.classList.toggle('open');
+  mNav.classList.toggle('open');
+  document.body.style.overflow = mNav.classList.contains('open')?'hidden':'';
+});
+function closeMenu(){
+  ham.classList.remove('open');
+  mNav.classList.remove('open');
+  document.body.style.overflow='';
+}
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
